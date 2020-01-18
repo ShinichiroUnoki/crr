@@ -1,0 +1,33 @@
+<script type="text/javascript">
+$(function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({});
+    };
+
+    function clearCalendar() {
+        $('#calendar').html('');
+    };
+
+    $(document).on('turbolinks:load', function () {
+        eventCalendar();
+    });
+
+    $(document).on('turbolinks:before-cache', clearCalendar);
+
+    $('#calendar').fullCalendar({
+        lang: 'ja',
+        events: '/users/calendar.json',
+        displayEventTime: true,
+        displayEventEnd: {
+            month: true,
+            basicWeek: true,
+            "default": true
+        },
+        timeFormat: "M/DD HH:mm",
+    });
+});
+</script>
+<h2>マイカレンダー</h2>
+<div class="mb-3">
+    <div id="calendar"></div>
+</div>
