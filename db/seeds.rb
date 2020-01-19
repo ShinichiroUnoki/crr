@@ -6,9 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 10.times do |num|
-#   Room.create(facility_id: 1, name: 'デモ会議室', seating_capacity: 40, usage_fee: 4000, accountable_time: "9:00-18:00", note: 'テキストテキスト')
-# end
-# User.create(last_name: 'unoki')
-Facility.create(name: 'Inner Resource')
-User.create(facility_id: 1, last_name: '鵜木', first_name: '新一郎', email: 'unoki.shinichiro.1994@gmail.com', password: '123456')
+Facility.create(name: '施設1')
+User.create(facility_id: 1, last_name: 'テスト１', first_name: 'テスト２', email: 'test@gmail.com', password: '123456')
