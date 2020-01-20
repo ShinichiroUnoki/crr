@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      room: "会議室"
+      schedule: "スケジュール"
+    attributes:
+      room:
+        name: 会議室名
+        seating_capacity: 収容人数
+        usage_fee: 利用金額
+        accountable_time: 使用可能時間
+        note: 備考
+      schedule:
+        
+    

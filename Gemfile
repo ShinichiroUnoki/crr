@@ -85,3 +85,6 @@ gem 'bootstrap4-datetime-picker-rails'
 
 # font-awesome
 gem 'font-awesome-rails'
+
+#バリデーションエラー日本語化
+gem 'rails-i18n'

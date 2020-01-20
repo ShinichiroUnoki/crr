@@ -4,4 +4,5 @@ class Room < ApplicationRecord
   has_many :users, through: :schedules, dependent: :destroy
   #空で無いかどうか
   validates :name, :seating_capacity, :usage_fee, :accountable_time, presence: true
+  validates :seating_capacity, :usage_fee, numericality: { only_integer: true }
 end

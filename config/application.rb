@@ -18,6 +18,11 @@ module Myapp
 
     #DBの保存時間を変更する
     config.active_record.default_timezone = :local
+
+    #バリデーションエラーの日本語化
+    config.i18n.default_locale = :ja
+    #config/locales以下のディレクトリ内にある全てのymlファイルを読み込むように指示する一文
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', '*.yml').to_s]
   end
 end
 

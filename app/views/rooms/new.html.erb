@@ -9,7 +9,13 @@ window.onload = function() {
 }
 </script>
 <% if @room.errors.any? %>
-   <p>保存できませんでした。(※)に空白があります。</p>
+<div class="alert alert-warning">
+  <ul>
+    <% @room.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 <h2>会議室の新規登録</h2>
 <div class="col-6 border border-primary text-center">
