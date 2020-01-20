@@ -5,7 +5,7 @@ window.onload = function() {
 
   if(path.match(pattern)) return;
 
-  history.replaceState('', '', `/edit/<%= @room.id %>`)
+  history.replaceState('', '', `/rooms/<%= @room.id %>/edit`)
 }
 </script>
 
@@ -43,7 +43,7 @@ window.onload = function() {
     </div>  
     <div class="row">
       <div class="text-right col-11 p-0">
-        <%= link_to "削除", "/rooms/destroy/#{@room.id}", {method: :delete, class: "my-2 p-2 text-white rounded bg-danger"} %>
+        <%= link_to "削除", room_path(@room.id), {method: :delete, class: "my-2 p-2 text-white rounded bg-danger"} %>
         <%= form.submit "登録", {class: "my-2 p-2 text-white rounded bg-primary"} %>
       </div>
     </div>    

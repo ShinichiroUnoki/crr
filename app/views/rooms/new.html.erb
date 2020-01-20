@@ -5,7 +5,7 @@ window.onload = function() {
 
   if(path.match(pattern)) return;
 
-  history.replaceState('', '', `new_room_path`)
+  history.replaceState('', '', `rooms/new`)
 }
 </script>
 <% if @room.errors.any? %>

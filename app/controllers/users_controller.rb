@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
+
+  def index
+    redirect_to new_user_registration_path
+  end
+
   def show
     @user = current_user
     @schedules = Schedule.where(user_id: @user.id)
     render 'show'
-  end
-
-  def update
-    @user = current_user
-    if @user.update(user_params)
-      redirect_to("/")
-    else
-      render "/users/edit"
-    end
   end
 
   def user_params

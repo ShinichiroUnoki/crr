@@ -30,7 +30,7 @@ class SchedulesController < ApplicationController
   def update
     @schedule= Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      redirect_to("/schedules/top/#{@schedule.room_id}")
+      redirect_to schedule_path(@schedule.room_id)
     else
       render action: :edit
     end
@@ -39,7 +39,7 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule = Schedule.find(params[:id])
     @schedule.destroy
-    redirect_to("/schedules/top/#{@schedule.room_id}")
+    redirect_to schedule_path(@schedule.room_id)
   end
 
   def schedule_params

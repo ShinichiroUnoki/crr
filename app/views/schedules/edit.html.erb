@@ -6,7 +6,7 @@
 
     if(path.match(pattern)) return;
 
-    history.replaceState('', '', `edit_schedule_path`)
+    history.replaceState('', '', `/schedules/<%= @schedule.id %>/edit`)
   }
 
   $(function () {
@@ -82,7 +82,7 @@
       </div>
       <div class="row">
         <div class="text-right col-12">
-          <%= link_to "削除", "/schedules/destroy/#{@schedule.id}", {method: :delete, class: "p-2 text-white rounded bg-danger"} %>
+          <%= link_to "削除", schedule_path(@schedule.id), {method: :delete, class: "p-2 text-white rounded bg-danger"} %>
           <%= form.submit "編集", {class: "p-2 text-white rounded bg-primary"} %>
         </div>
       </div>          
