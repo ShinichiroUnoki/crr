@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  def calendar
+  def show
     @user = current_user
     @schedules = Schedule.where(user_id: @user.id)
-    render 'calendar'
+    render 'show'
   end
 
   def update

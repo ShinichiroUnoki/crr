@@ -6,7 +6,7 @@
 
     if(path.match(pattern)) return;
 
-    history.replaceState('', '', `/edit/<%= @schedule.id %>`)
+    history.replaceState('', '', `edit_schedule_path`)
   }
 
   $(function () {
@@ -49,7 +49,7 @@
   <% end %>
   <h2>予約の編集</h2>
   <div class="col-7 p-2 border border-primary text-center">
-    <%= form_with(model: @schedule, url: "/schedules/update/#{@schedule.id}", local: true) do |form| %>
+    <%= form_with(model: @schedule, local: true) do |form| %>
       <div class="row">
         <div class="col-6">
           <%= form.label :starting_time, '開始時刻', {class: "text-left col-12"} %>

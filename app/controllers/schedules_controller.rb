@@ -1,10 +1,10 @@
 class SchedulesController < ApplicationController
-  def top
+  def show
     @facility = Facility.find(1)
     @room = @facility.rooms.find(params[:id])
     if @room
       @schedules = @room.schedules.where(room_id: params[:id])
-      render 'top'
+      render 'show'
     end
   end
 
@@ -15,10 +15,9 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @room = Room.find(params[:id])
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
-      redirect_to("/schedules/top/#{@room.id}")
+      redirect_to schedule_path(@schedule.room_id)
     else
       render action: :new
     end

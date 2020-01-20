@@ -16,7 +16,7 @@
 
         $('#calendar').fullCalendar({
             lang: 'ja',
-            events: '/schedules/top/<%= @room.id %>.json',
+            events: '/schedules/<%= @room.id %>.json',
             displayEventTime: true,
             displayEventEnd: {
                 month: true,
@@ -30,7 +30,7 @@
 <div class="row">
     <div class="col-12">
         <h2 class="d-inline-block mr-5 mb-5"><%= @room.name %></h2>
-        <%= link_to "新規作成", "/schedules/new/#{@room.id}", {class: "p-2 ml-5 text-white rounded bg-primary"} %></br>
+        <%= link_to "新規作成", new_schedule_path(id: @room.id), {class: "p-2 ml-5 text-white rounded bg-primary"} %></br>
     </div>
 </div>
 <div class="mb-3">

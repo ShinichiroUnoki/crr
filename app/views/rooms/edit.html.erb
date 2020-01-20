@@ -14,7 +14,7 @@ window.onload = function() {
 <% end %>
 <h2><%= @room.name %>の編集</h2>
 <div class="col-6 border border-primary text-center">
-  <%= form_with(model: @room, url: "/rooms/update/#{@room.id}", local: true) do |form| %>
+  <%= form_with(model: @room, local: true) do |form| %>
     <div class="row">
       <div class="col-6">
         <%= form.label :name, '会議室名(※)', {class: "text-left col-10"} %>

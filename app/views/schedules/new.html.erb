@@ -5,7 +5,7 @@
 
     if(path.match(pattern)) return;
 
-    history.replaceState('', '', `/new/<%= @room.id %>`)
+    history.replaceState('', '', `schedule_path(@room.id)`)
   }
 
   $(function () {
@@ -47,7 +47,7 @@
   <p>保存できませんでした。(※)に空白があります。</p>
 <% end %>
 <div class="col-7 p-2 border border-primary text-center">
-  <%= form_with(model: @schedule, url: "/schedules/create/#{@room.id}", local: true) do |form| %>
+  <%= form_with(model: @schedule, local: true) do |form| %>
     <div class="row">
       <div class="col-6">
         <%= form.label :starting_time, '開始時刻(※)', {class: "text-left col-12"}%>

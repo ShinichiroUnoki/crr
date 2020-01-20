@@ -5,7 +5,7 @@ window.onload = function() {
 
   if(path.match(pattern)) return;
 
-  history.replaceState('', '', `/new`)
+  history.replaceState('', '', `new_room_path`)
 }
 </script>
 <% if @room.errors.any? %>
@@ -19,7 +19,7 @@ window.onload = function() {
 <% end %>
 <h2>会議室の新規登録</h2>
 <div class="col-6 border border-primary text-center">
-  <%= form_with(model: @room, url: "/rooms/create", local: true) do |form| %>
+  <%= form_with(model: @room, local: true) do |form| %>
     <div class="row">
       <div class="col-6">
         <%= form.label :name, '会議室名(※)', {class: "text-left col-10"}%>

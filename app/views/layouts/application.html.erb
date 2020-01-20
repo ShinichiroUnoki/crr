@@ -19,9 +19,9 @@
         <div class="row menu">
           <div class="col-2 bg-primary">
             <div class="row h-50 pl-5 pt-5 d-flex flex-column bd-highlight mb-3">
-              <p><%= link_to "会議室一覧", "/", {class: "text-white p-2 bd-highlight"} %></p>
-              <p><%= link_to "マイカレンダー", "/users/calendar", {class: "text-white p-2 bd-highlight"} %></p>
-              <p><%= link_to "マイページ", "/users/edit", {class: "text-white p-2 bd-highlight"} %></p>
+              <p><%= link_to "会議室一覧", rooms_path, {class: "text-white p-2 bd-highlight"} %></p>
+              <p><%= link_to "マイカレンダー", user_path(id: current_user.id), {class: "text-white p-2 bd-highlight"} %></p>
+              <p><%= link_to "マイページ", edit_user_registration_path, {class: "text-white p-2 bd-highlight"} %></p>
             </div>
             <div class="row pl-5">
               <div class="d-flex flex-column bd-highlight">
